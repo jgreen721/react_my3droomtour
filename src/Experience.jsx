@@ -14,9 +14,10 @@ const Model = ()=>{
     // const [hasPlayed,setHasPlayed] = useState(false)
     const {actions,mixer} = useAnimations(img.animations,img.scene)
 
-    console.log(img)
+    // console.log(img)
 
     useEffect(()=>{
+        console.log("huh?")
         tl.current = gsap.timeline({duration:5})
         if(innerWidth < 600){
             setInitialPosition([0,2,0])
