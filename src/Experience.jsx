@@ -20,7 +20,7 @@ const Model = ()=>{
         console.log("huh?")
         tl.current = gsap.timeline({duration:5})
         if(innerWidth < 600){
-            setInitialPosition([0,1,0])
+            setInitialPosition([0,-1,0])
         }
     },[])
 
