@@ -17,7 +17,6 @@ const Model = ()=>{
     console.log(img)
 
     useEffect(()=>{
-        console.log("huh?")
         tl.current = gsap.timeline({duration:5})
         if(innerWidth < 600){
             setInitialPosition([0,-1,0])
@@ -34,8 +33,8 @@ if(innerWidth > 600){
         tl.current.to(modelRef.current.position,{x:.75,y:.55,z:2.5},2.5);
         tl.current.to(modelRef.current.rotation,{y:-.45},2.5)
 
-        tl.current.to(modelRef.current.position,{x:-.35,y:.5,z:3.6},4)
-        tl.current.to(modelRef.current.rotation,{y:.25},4)
+        tl.current.to(modelRef.current.position,{x:-.7,y:.3,z:3.3},4)
+        tl.current.to(modelRef.current.rotation,{y:.55},4)
 
 }
 else{
@@ -65,12 +64,13 @@ else{
 
        else if((tl.current.duration() * scroll.offset) > 4.15){
             img.animations.forEach(clip=>{
-                if(clip.name == "GlowScreen"){
-                  console.log("pan camera!!")
+                if(clip.name == "GlowScreen" || clip.name == "ShelfGrow.001"){
+                //   console.log("pan camera!!")
                     let action = mixer.clipAction(clip);
                     action.setLoop(THREE.LoopOnce);
                     action.play();
                     action.clampWhenFinished = true;
+                    console.log(clip.name)
                 
                 }
                 // setHasPlayed(true)
