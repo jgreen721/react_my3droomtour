@@ -2,14 +2,19 @@ import { useState } from 'react'
 import { Canvas } from '@react-three/fiber'
 import Experience from "./Experience.jsx"
 import './App.css'
-import { Environment, OrbitControls, ScrollControls } from '@react-three/drei'
+import { Environment, OrbitControls, ScrollControls,Text } from '@react-three/drei'
+import Welcome from './Welcome.jsx'
 
 function App() {
 
   return (
     <div className="app">
-      <Canvas>
+      {/* <Welcome/> */}
+       <Canvas>
         <color attach="background" args={["black"]}/>
+        <Text position={[-.5,3,0]} scale={.45}>
+          3d World
+        </Text>
         {/* <ambientLight intensity={1}/> */}
         {/* <Environment preset="city" background={true}/> */}
         {/* <OrbitControls/> */}
@@ -17,7 +22,7 @@ function App() {
         <ScrollControls pages={5}>
         <Experience/>
         </ScrollControls>
-      </Canvas>
+      </Canvas> 
     </div>
   )
 }
